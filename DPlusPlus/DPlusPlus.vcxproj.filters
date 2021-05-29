@@ -8,7 +8,7 @@
     <ClCompile Include="Src\Discord.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Log.cpp">
+    <ClCompile Include="Log.cpp">
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="Src\Globals.cpp">
