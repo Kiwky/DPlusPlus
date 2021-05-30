@@ -3,17 +3,25 @@
 
 #include "Discord.h"
 
+#include <cpprest/ws_client.h>
+#include <cpprest/http_client.h>
+using namespace std;
+using namespace web::json;
+using namespace web::http;
+using namespace web::http::client;
+using namespace utility;
+
 class Bot: public Discord {
 
 };
 
 int main() {
-	std::cout << Discord::GetToken();
 	Bot b;
 	b.Start("TOKEN");
 
-	int x;
-	std::cin >> x;
+	std::cin.get();
+	std::cin.get();
+	std::cin.get();
 
 	return 0;
 }

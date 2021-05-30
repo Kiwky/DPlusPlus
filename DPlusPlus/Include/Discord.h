@@ -35,12 +35,17 @@ class Discord {
 
 public:
 	void Start(const std::string &token);
-	void ProcessBotIdentity();
-	void ProcessBotHeartbeat();
-	void ProcessBotResponse(websocket_incoming_message &message);
+	void ModifyPresence(const std::string &name, const std::string &status = "online");
 
 	static std::string &GetToken();
 	static std::string GetOS();
+
+	static nJson API_Call(const std::string &url, method apiMethod, const std::string &jsonObject = "");
+
+private:
+	void ProcessBotIdentity();
+	void ProcessBotHeartbeat();
+	void ProcessBotResponse(websocket_incoming_message &message);
 
 private:
 	static std::string m_token;
