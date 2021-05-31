@@ -82,7 +82,31 @@ void Discord::ProcessBotResponse(websocket_incoming_message &message) {
 	switch(op) {
 		case (int)OP_Type::kDispatch:
 		{
+			const std::string type = resultJson["t"];
+			m_lastSignal = resultJson["s"];
 
+			switch(hash_string(type.c_str())) {
+				case hash_string("READY"):
+				{
+					break;
+				}
+				case hash_string("MESSAGE_CREATE"):
+				{
+					Message message(data);
+
+					// Call virtual function.
+					OnMessageCreated(message);
+					break;
+				}
+				case hash_string("MESSAGE_UPDATE"):
+				{
+					Message message(data);
+
+					// Call virtual function.
+					//OnMessageUpdate(message);
+					break;
+				}
+			}
 			break;
 		}
 		case (int)OP_Type::kHello:

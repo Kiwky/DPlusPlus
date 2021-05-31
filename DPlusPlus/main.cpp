@@ -3,15 +3,12 @@
 
 #include "Discord.h"
 
-#include <cpprest/ws_client.h>
-#include <cpprest/http_client.h>
-using namespace std;
-using namespace web::json;
-using namespace web::http;
-using namespace web::http::client;
-using namespace utility;
-
 class Bot: public Discord {
+
+public:
+	virtual void OnMessageCreated(const Message &message) override {
+		std::cout << message.m_content;
+	}
 
 };
 

@@ -10,6 +10,7 @@
 
 #include "Log.h"
 #include "Globals.h"
+#include "Message/Message.h"
 
 using namespace web;
 using namespace web::http;
@@ -41,6 +42,13 @@ public:
 	static std::string GetOS();
 
 	static nJson API_Call(const std::string &url, method apiMethod, const std::string &jsonObject = "");
+
+public:
+	// Sent when a message is created. 
+	virtual void OnMessageCreated(const Message &message);
+
+	// Sent when a message is deleted. 
+	virtual void OnMessageDeleted(const Message &message);
 
 private:
 	void ProcessBotIdentity();

@@ -185,6 +185,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Src\Message\MessageBulkDeleteEventArgs.cpp" />
+    <ClCompile Include="Src\Message\MessageDeleteEventArgs.cpp" />
+    <ClCompile Include="Src\Message\MessageReactionAddEventArgs.cpp" />
+    <ClCompile Include="Src\Message\Message​Reaction​Remove​Emoji​Event​Args.cpp" />
+    <ClCompile Include="Src\Message\MessageCreateEventArgs.cpp" />
+    <ClCompile Include="Src\DiscordVirtuals.cpp" />
+    <ClCompile Include="Src\Message\Message.cpp" />
     <ClCompile Include="Src\Discord.cpp" />
     <ClCompile Include="Src\Globals.cpp" />
     <ClCompile Include="Src\Log.cpp" />
@@ -193,6 +200,13 @@
     <ClInclude Include="Include\Discord.h" />
     <ClInclude Include="Include\Globals.h" />
     <ClInclude Include="Include\Log.h" />
+    <ClInclude Include="Include\Message\Message.h" />
+    <ClInclude Include="Include\Snowflake.h" />
+    <ClInclude Include="Include\Message\MessageCreateEventArgs.h" />
+    <ClInclude Include="Include\Message\MessageBulkDeleteEventArgs.h" />
+    <ClInclude Include="Include\Message\MessageDeleteEventArgs.h" />
+    <ClInclude Include="Include\Message\MessageReactionAddEventArgs.h" />
+    <ClInclude Include="Include\Message\Message​Reaction​Remove​Emoji​Event​Args.h" />
     <ClInclude Include="vendor\nlohmann\json.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
