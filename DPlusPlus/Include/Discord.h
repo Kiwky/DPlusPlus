@@ -10,7 +10,7 @@
 
 #include "Log.h"
 #include "Globals.h"
-#include "Message/Message.h"
+#include "Library.h"
 
 using namespace web;
 using namespace web::http;
@@ -45,10 +45,10 @@ public:
 
 public:
 	// Sent when a message is created. 
-	virtual void OnMessageCreated(const Message &message);
+	virtual void OnMessageCreated(const MessageCreateEventArgs &message);
 
 	// Sent when a message is deleted. 
-	virtual void OnMessageDeleted(const Message &message);
+	virtual void OnMessageDeleted(const MessageDeleteEventArgs &message);
 
 private:
 	void ProcessBotIdentity();

@@ -184,6 +184,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Src\Message\Message​Update​Event​Args.cpp" />
+    <ClCompile Include="Src\Guild\Guild.cpp" />
+    <ClCompile Include="Src\Channel\Channel.cpp" />
     <ClCompile Include="Src\Channel\Channel​Create​Event​Args.cpp" />
     <ClCompile Include="Src\Channel\Channel​Delete​Event​Args.cpp" />
     <ClCompile Include="Src\Channel\Channel​Pins​Update​Event​Args.cpp" />
@@ -215,6 +218,8 @@
     <ClCompile Include="Src\Log.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Include\Guild\Guild.h" />
+    <ClInclude Include="Include\Channel\Channel.h" />
     <ClInclude Include="Include\Channel\Channel​Create​Event​Args.h" />
     <ClInclude Include="Include\Channel\Channel​Delete​Event​Args.h" />
     <ClInclude Include="Include\Channel\Channel​Pins​Update​Event​Args.h" />
@@ -235,6 +240,7 @@
     <ClInclude Include="Include\Guild\Guild​Update​Event​Args.h" />
     <ClInclude Include="Include\Discord.h" />
     <ClInclude Include="Include\Globals.h" />
+    <ClInclude Include="Include\Library.h" />
     <ClInclude Include="Include\Log.h" />
     <ClInclude Include="Include\Message\Message.h" />
     <ClInclude Include="Include\Snowflake.h" />
@@ -243,6 +249,7 @@
     <ClInclude Include="Include\Message\MessageDeleteEventArgs.h" />
     <ClInclude Include="Include\Message\MessageReactionAddEventArgs.h" />
     <ClInclude Include="Include\Message\Message​Reaction​Remove​Emoji​Event​Args.h" />
+    <ClInclude Include="Include\Message\Message​Update​Event​Args.h" />
     <ClInclude Include="vendor\nlohmann\json.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

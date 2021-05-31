@@ -92,7 +92,7 @@ void Discord::ProcessBotResponse(websocket_incoming_message &message) {
 				}
 				case hash_string("MESSAGE_CREATE"):
 				{
-					Message message(data);
+					MessageCreateEventArgs message(data);
 
 					// Call virtual function.
 					OnMessageCreated(message);
@@ -100,7 +100,7 @@ void Discord::ProcessBotResponse(websocket_incoming_message &message) {
 				}
 				case hash_string("MESSAGE_UPDATE"):
 				{
-					Message message(data);
+					MessageDeleteEventArgs message(data);
 
 					// Call virtual function.
 					//OnMessageUpdate(message);

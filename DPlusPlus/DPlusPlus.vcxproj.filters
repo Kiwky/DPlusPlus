@@ -39,6 +39,9 @@
     <ClCompile Include="Src\Channel\Channel​Delete​Event​Args.cpp" />
     <ClCompile Include="Src\Channel\Channel​Pins​Update​Event​Args.cpp" />
     <ClCompile Include="Src\Channel\Channel​Update​Event​Args.cpp" />
+    <ClCompile Include="Src\Channel\Channel.cpp" />
+    <ClCompile Include="Src\Guild\Guild.cpp" />
+    <ClCompile Include="Src\Message\Message​Update​Event​Args.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Include">
@@ -84,5 +87,9 @@
     <ClInclude Include="Include\Channel\Channel​Delete​Event​Args.h" />
     <ClInclude Include="Include\Channel\Channel​Pins​Update​Event​Args.h" />
     <ClInclude Include="Include\Channel\Channel​Update​Event​Args.h" />
+    <ClInclude Include="Include\Library.h" />
+    <ClInclude Include="Include\Channel\Channel.h" />
+    <ClInclude Include="Include\Guild\Guild.h" />
+    <ClInclude Include="Include\Message\Message​Update​Event​Args.h" />
   </ItemGroup>
 </Project>
