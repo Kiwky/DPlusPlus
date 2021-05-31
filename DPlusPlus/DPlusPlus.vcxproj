@@ -184,6 +184,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Src\Channel\Channel​Create​Event​Args.cpp" />
+    <ClCompile Include="Src\Channel\Channel​Delete​Event​Args.cpp" />
+    <ClCompile Include="Src\Channel\Channel​Pins​Update​Event​Args.cpp" />
+    <ClCompile Include="Src\Channel\Channel​Update​Event​Args.cpp" />
     <ClCompile Include="Src\Guild\Guild​Ban​Add​Event​Args.cpp" />
     <ClCompile Include="Src\Guild\Guild​Ban​Remove​Event​Args.cpp" />
     <ClCompile Include="Src\Guild\Guild​Create​Event​Args.cpp" />
@@ -211,6 +215,10 @@
     <ClCompile Include="Src\Log.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Include\Channel\Channel​Create​Event​Args.h" />
+    <ClInclude Include="Include\Channel\Channel​Delete​Event​Args.h" />
+    <ClInclude Include="Include\Channel\Channel​Pins​Update​Event​Args.h" />
+    <ClInclude Include="Include\Channel\Channel​Update​Event​Args.h" />
     <ClInclude Include="Include\Guild\Guild​Ban​Add​Event​Args.h" />
     <ClInclude Include="Include\Guild\Guild​Ban​Remove​Event​Args.h" />
     <ClInclude Include="Include\Guild\Guild​Create​Event​Args.h" />

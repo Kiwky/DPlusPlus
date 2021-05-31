@@ -35,6 +35,10 @@
     <ClCompile Include="Src\Guild\Guild​Role​Delete​Event​Args.cpp" />
     <ClCompile Include="Src\Guild\Guild​Role​Update​Event​Args.cpp" />
     <ClCompile Include="Src\Guild\Guild​Update​Event​Args.cpp" />
+    <ClCompile Include="Src\Channel\Channel​Create​Event​Args.cpp" />
+    <ClCompile Include="Src\Channel\Channel​Delete​Event​Args.cpp" />
+    <ClCompile Include="Src\Channel\Channel​Pins​Update​Event​Args.cpp" />
+    <ClCompile Include="Src\Channel\Channel​Update​Event​Args.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Include">
@@ -76,5 +80,9 @@
     <ClInclude Include="Include\Guild\Guild​Role​Delete​Event​Args.h" />
     <ClInclude Include="Include\Guild\Guild​Role​Update​Event​Args.h" />
     <ClInclude Include="Include\Guild\Guild​Update​Event​Args.h" />
+    <ClInclude Include="Include\Channel\Channel​Create​Event​Args.h" />
+    <ClInclude Include="Include\Channel\Channel​Delete​Event​Args.h" />
+    <ClInclude Include="Include\Channel\Channel​Pins​Update​Event​Args.h" />
+    <ClInclude Include="Include\Channel\Channel​Update​Event​Args.h" />
   </ItemGroup>
 </Project>
