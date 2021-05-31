@@ -184,6 +184,20 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Src\Guild\Guild​Ban​Add​Event​Args.cpp" />
+    <ClCompile Include="Src\Guild\Guild​Ban​Remove​Event​Args.cpp" />
+    <ClCompile Include="Src\Guild\Guild​Create​Event​Args.cpp" />
+    <ClCompile Include="Src\Guild\Guild​Delete​Event​Args.cpp" />
+    <ClCompile Include="Src\Guild\Guild​Download​Completed​Event​Args.cpp" />
+    <ClCompile Include="Src\Guild\Guild​Emojis​Update​Event​Args.cpp" />
+    <ClCompile Include="Src\Guild\Guild​Integrations​Update​Event​Args.cpp" />
+    <ClCompile Include="Src\Guild\Guild​Member​Add​Event​Args.cpp" />
+    <ClCompile Include="Src\Guild\Guild​Member​Remove​Event​Args.cpp" />
+    <ClCompile Include="Src\Guild\Guild​Member​Update​Event​Args.cpp" />
+    <ClCompile Include="Src\Guild\Guild​Role​Create​Event​Args.cpp" />
+    <ClCompile Include="Src\Guild\Guild​Role​Delete​Event​Args.cpp" />
+    <ClCompile Include="Src\Guild\Guild​Role​Update​Event​Args.cpp" />
+    <ClCompile Include="Src\Guild\Guild​Update​Event​Args.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Src\Message\MessageBulkDeleteEventArgs.cpp" />
     <ClCompile Include="Src\Message\MessageDeleteEventArgs.cpp" />
@@ -197,6 +211,20 @@
     <ClCompile Include="Src\Log.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Include\Guild\Guild​Ban​Add​Event​Args.h" />
+    <ClInclude Include="Include\Guild\Guild​Ban​Remove​Event​Args.h" />
+    <ClInclude Include="Include\Guild\Guild​Create​Event​Args.h" />
+    <ClInclude Include="Include\Guild\Guild​Delete​Event​Args.h" />
+    <ClInclude Include="Include\Guild\Guild​Download​Completed​Event​Args.h" />
+    <ClInclude Include="Include\Guild\Guild​Emojis​Update​Event​Args.h" />
+    <ClInclude Include="Include\Guild\Guild​Integrations​Update​Event​Args.h" />
+    <ClInclude Include="Include\Guild\Guild​Member​Add​Event​Args.h" />
+    <ClInclude Include="Include\Guild\Guild​Member​Remove​Event​Args.h" />
+    <ClInclude Include="Include\Guild\Guild​Member​Update​Event​Args.h" />
+    <ClInclude Include="Include\Guild\Guild​Role​Create​Event​Args.h" />
+    <ClInclude Include="Include\Guild\Guild​Role​Delete​Event​Args.h" />
+    <ClInclude Include="Include\Guild\Guild​Role​Update​Event​Args.h" />
+    <ClInclude Include="Include\Guild\Guild​Update​Event​Args.h" />
     <ClInclude Include="Include\Discord.h" />
     <ClInclude Include="Include\Globals.h" />
     <ClInclude Include="Include\Log.h" />
