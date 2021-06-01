@@ -1,13 +1,13 @@
 #pragma once
 
-#include "Globals.h"
 #include "nlohmann/json.hpp"
+
+#include "Globals.h"
 
 using nJson = nlohmann::json;
 
 class Message;
 class Channel;
-class User;
 
 class MessageCreateEventArgs {
 
@@ -16,8 +16,7 @@ public:
 	~MessageCreateEventArgs();
 
 public:
-	Message *message;
-	Channel *channel;
-	User *user;
+	Message *m_message;
+	Channel *m_channel;
 
 };

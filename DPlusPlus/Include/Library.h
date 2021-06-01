@@ -33,5 +33,11 @@
 #include "Emoji/EventArgs/EmojiEventArgs.h"
 
 #include "Embed/Embed.h"
+#include "Embed/EmbedAuthor.h"
+#include "Embed/EmbedFooter.h"
+#include "Embed/EmbedImage.h"
+#include "Embed/EmbedProvider.h"
+#include "Embed/EmbedThumbnail.h"
+#include "Embed/EmbedVideo.h"
 
 #include "User/User.h"

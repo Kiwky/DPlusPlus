@@ -184,6 +184,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Src\Embed\EmbedAuthor.cpp" />
+    <ClCompile Include="Src\Embed\EmbedFooter.cpp" />
+    <ClCompile Include="Src\Embed\EmbedImage.cpp" />
+    <ClCompile Include="Src\Embed\EmbedProvider.cpp" />
+    <ClCompile Include="Src\Embed\EmbedThumbnail.cpp" />
+    <ClCompile Include="Src\Embed\EmbedVideo.cpp" />
     <ClCompile Include="Src\Embed\Embed.cpp" />
     <ClCompile Include="Src\Emoji\Emoji.cpp" />
     <ClCompile Include="Src\Emoji\EventArgs\EmojiEventArgs.cpp" />
@@ -223,6 +229,12 @@
     <ClCompile Include="Src\User\User.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Include\Embed\EmbedAuthor.h" />
+    <ClInclude Include="Include\Embed\EmbedFooter.h" />
+    <ClInclude Include="Include\Embed\EmbedImage.h" />
+    <ClInclude Include="Include\Embed\EmbedProvider.h" />
+    <ClInclude Include="Include\Embed\EmbedThumbnail.h" />
+    <ClInclude Include="Include\Embed\EmbedVideo.h" />
     <ClInclude Include="Include\Embed\Embed.h" />
     <ClInclude Include="Include\Emoji\Emoji.h" />
     <ClInclude Include="Include\Emoji\EventArgs\EmojiEventArgs.h" />

@@ -1,0 +1,1 @@
+#include "EmbedImage.h"
