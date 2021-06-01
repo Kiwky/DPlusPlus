@@ -98,14 +98,6 @@ void Discord::ProcessBotResponse(websocket_incoming_message &message) {
 					OnMessageCreated(message);
 					break;
 				}
-				case hash_string("MESSAGE_UPDATE"):
-				{
-					MessageDeleteEventArgs message(data);
-
-					// Call virtual function.
-					//OnMessageUpdate(message);
-					break;
-				}
 			}
 			break;
 		}

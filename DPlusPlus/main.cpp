@@ -6,9 +6,9 @@
 class Bot: public Discord {
 
 public:
-	virtual void OnMessageCreated(const MessageCreateEventArgs &message) override {
-		//std::cout << message.m_content;
-	}
+	//virtual void OnMessageCreated(const MessageCreateEventArgs &message) override {
+	//	//std::cout << message.m_content;
+	//}
 
 };
 
