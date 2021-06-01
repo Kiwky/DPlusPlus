@@ -41,8 +41,6 @@ public:
 	static std::string &GetToken();
 	static std::string GetOS();
 
-	static nJson API_Call(const std::string &url, method apiMethod, const std::string &jsonObject = "");
-
 public:
 	// Sent when a message is created. 
 	virtual void OnMessageCreated(const MessageCreateEventArgs &message);

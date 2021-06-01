@@ -1,5 +1,6 @@
 #pragma once
 
+#include "Globals.h"
 #include "nlohmann/json.hpp"
 
 using nJson = nlohmann::json;
@@ -12,6 +13,7 @@ class MessageCreateEventArgs {
 
 public:
 	MessageCreateEventArgs(const nJson &json);
+	~MessageCreateEventArgs();
 
 public:
 	Message *message;
