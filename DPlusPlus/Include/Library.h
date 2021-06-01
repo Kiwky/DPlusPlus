@@ -33,3 +33,5 @@
 #include "Emoji/EventArgs/EmojiEventArgs.h"
 
 #include "Embed/Embed.h"
+
+#include "User/User.h"

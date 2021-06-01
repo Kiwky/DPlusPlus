@@ -46,6 +46,7 @@
     <ClCompile Include="Src\Emoji\Emoji.cpp" />
     <ClCompile Include="Src\Emoji\EventArgs\EmojiEventArgs.cpp" />
     <ClCompile Include="Src\Embed\Embed.cpp" />
+    <ClCompile Include="Src\User\User.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Include">
@@ -102,5 +103,6 @@
     <ClInclude Include="Include\Emoji\Emoji.h" />
     <ClInclude Include="Include\Emoji\EventArgs\EmojiEventArgs.h" />
     <ClInclude Include="Include\Embed\Embed.h" />
+    <ClInclude Include="Include\User\User.h" />
   </ItemGroup>
 </Project>
