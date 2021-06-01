@@ -16,7 +16,7 @@ public:
 
 int main() {
 	Bot b;
-	b.Start("");
+	b.Start("TOKEN");
 
 	std::cin.get();
 	std::cin.get();
