@@ -4,8 +4,9 @@
   virtual void OnMessageDeleted(const MessageDeleteEventArgs &message);
 ```
 
-``Channel methods``
+`` Channel methods ``
 ```c++
+
   	Message GetMessage(const Snowflake &messageId);
   	static Message GetMessage(const Snowflake &channelId, const Snowflake &messageId);
 	  
