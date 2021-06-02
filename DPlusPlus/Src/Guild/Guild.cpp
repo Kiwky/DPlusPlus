@@ -1,5 +1,7 @@
 #include "Guild/Guild.h"
 
+#include "Member/Member.h"
+
 Guild::Guild(const Snowflake &id) {
 	*this = Guild(API_Call("/guilds/" + id, methods::GET));
 }
@@ -48,4 +50,13 @@ Guild::Guild(const nJson &json) {
 	//GetJsonVector(data, "channels",					/**/ channels);
 	//GetJsonVector(data, "members",					/**/ members);
 	//GetJsonVector(data, "emojis",						/**/ emojis);
+}
+
+Member Guild::GetMember(const Snowflake &id) {
+	return GetMember(m_id, id);
+}
+
+Member Guild::GetMember(const Snowflake &guildId, const Snowflake &id) {
+	Member member(API_Call("/guilds/" + guildId + "/members/" + id, methods::GET));
+	return member;
 }

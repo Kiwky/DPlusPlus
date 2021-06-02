@@ -184,6 +184,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Src\Member\Member.cpp" />
     <ClCompile Include="Src\Embed\EmbedAuthor.cpp" />
     <ClCompile Include="Src\Embed\EmbedFooter.cpp" />
     <ClCompile Include="Src\Embed\EmbedImage.cpp" />
@@ -272,6 +273,7 @@
     <ClInclude Include="Include\Message\EventArgs\MessageReactionsClearEventArgs.h" />
     <ClInclude Include="Include\Message\EventArgs\MessageUpdateEventArgs.h" />
     <ClInclude Include="Include\User\User.h" />
+    <ClInclude Include="Include\Member\Member.h" />
     <ClInclude Include="vendor\nlohmann\json.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

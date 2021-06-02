@@ -53,6 +53,7 @@
     <ClCompile Include="Src\Embed\EmbedVideo.cpp" />
     <ClCompile Include="Src\Embed\EmbedProvider.cpp" />
     <ClCompile Include="Src\Embed\EmbedAuthor.cpp" />
+    <ClCompile Include="Src\Member\Member.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Include">
@@ -116,5 +117,6 @@
     <ClInclude Include="Include\Embed\EmbedVideo.h" />
     <ClInclude Include="Include\Embed\EmbedProvider.h" />
     <ClInclude Include="Include\Embed\EmbedAuthor.h" />
+    <ClInclude Include="Include\Member\Member.h" />
   </ItemGroup>
 </Project>

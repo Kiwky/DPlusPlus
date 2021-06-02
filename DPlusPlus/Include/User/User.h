@@ -7,12 +7,13 @@
 #include "Snowflake.h"
 
 using nJson = nlohmann::json;
+using namespace DPlusPlus;
 
 class User {
 
 public:
 	User(const Snowflake &id);
-	User(const nJson &data);
+	User(const nJson &json);
 
 public:
 	Snowflake m_id;

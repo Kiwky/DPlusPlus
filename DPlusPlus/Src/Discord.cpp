@@ -94,7 +94,7 @@ void Discord::ProcessBotResponse(websocket_incoming_message &message) {
 				{
 					MessageCreateEventArgs message(data);
 
-					//Call virtual function.
+					// Call virtual function.
 					OnMessageCreated(message);
 					break;
 				}
@@ -102,8 +102,16 @@ void Discord::ProcessBotResponse(websocket_incoming_message &message) {
 				{
 					MessageDeleteEventArgs message(data);
 
-					//Call virtual function.
+					// Call virtual function.
 					OnMessageDeleted(message);
+					break;
+				}
+				case DPlusPlus::hash_string("MESSAGE_UPDATE"):
+				{
+					MessageUpdateEventArgs message(data);
+
+					// Call virtual function.
+					OnMessageUpdate(message);
 					break;
 				}
 			}

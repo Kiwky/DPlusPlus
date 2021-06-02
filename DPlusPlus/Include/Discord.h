@@ -48,6 +48,9 @@ public:
 	// Sent when a message is deleted. 
 	virtual void OnMessageDeleted(const MessageDeleteEventArgs &message);
 
+	// Sent when a message is updated. 
+	virtual void OnMessageUpdate(const MessageUpdateEventArgs &message);
+
 private:
 	void ProcessBotIdentity();
 	void ProcessBotHeartbeat();

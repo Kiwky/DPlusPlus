@@ -78,7 +78,6 @@ public:
 	int m_flags;
 	MessageType m_type;
 	User *m_user;
-	//Member member;						
 	std::string m_content;
 	std::string m_timestamp;
 	std::string m_editedTimestamp;

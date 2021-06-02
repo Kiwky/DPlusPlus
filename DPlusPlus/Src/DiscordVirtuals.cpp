@@ -7,3 +7,7 @@ void Discord::OnMessageCreated(const MessageCreateEventArgs &message) {
 void Discord::OnMessageDeleted(const MessageDeleteEventArgs &message) {
 	Log::Info("[OnMessageDeleted] Was called!");
 }
+
+void Discord::OnMessageUpdate(const MessageUpdateEventArgs &message) {
+	Log::Info("[OnMessageUpdate] Was called!");
+}

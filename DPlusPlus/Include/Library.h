@@ -41,3 +41,5 @@
 #include "Embed/EmbedVideo.h"
 
 #include "User/User.h"
+
+#include "Member/Member.h"

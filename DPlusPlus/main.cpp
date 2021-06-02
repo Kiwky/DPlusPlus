@@ -22,6 +22,11 @@ public:
 		message.m_channel->DeleteMessageBulk(list);
 	}
 
+	virtual void OnMessageUpdate(const MessageUpdateEventArgs &message) override {
+		std::cout << message.m_message->m_content << "\n";
+		std::cout << message.m_member->m_nick << "\n";
+	}
+
 };
 
 int main() {

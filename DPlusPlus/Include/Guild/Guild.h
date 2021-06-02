@@ -9,12 +9,18 @@
 using nJson = nlohmann::json;
 using namespace DPlusPlus;
 
+class Member;
+
 class Guild {
 
 public:
 	Guild() {}
 	Guild(const Snowflake &id);
 	Guild(const nJson &json);
+
+public:
+	Member GetMember(const Snowflake &id);
+	static Member GetMember(const Snowflake &guildId, const Snowflake &id);
 
 public:
 	Snowflake m_id;
