@@ -23,11 +23,11 @@
 ```
 
 ``Message methods``
-``c++
+```c++
 	void ModifyMessage(Message &message);
 	static void ModifyMessage(const Snowflake &channelId, const Snowflake &messageId, Message &message);
 
 	void DeleteMessage();
 	static void DeleteMessage(const Snowflake &channelId, const Snowflake &messageId);
 
-``
+```
