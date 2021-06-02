@@ -64,11 +64,11 @@ std::vector<Message> Channel::GetMessages(const Snowflake &channelId, int limit 
 	return messages;
 }
 
-void Channel::SendMessage(const std::string &content, Embed *embed /*= nullptr*/) {
-	SendMessage(m_id, content, embed);
+Message Channel::SendMessage(const std::string &content, Embed *embed /*= nullptr*/) {
+	return SendMessage(m_id, content, embed);
 }
 
-void Channel::SendMessage(const Snowflake &channelId, const std::string &content, Embed *embed /*= nullptr*/) {
+Message Channel::SendMessage(const Snowflake &channelId, const std::string &content, Embed *embed /*= nullptr*/) {
 	nJson jsonObject;
 	Message message;
 
@@ -77,7 +77,8 @@ void Channel::SendMessage(const Snowflake &channelId, const std::string &content
 		message.m_embeds = embed;
 
 	message.ToJson(jsonObject);
-	API_Call("/channels/" + channelId + "/messages", methods::POST, jsonObject.dump());
+
+	return Message(API_Call("/channels/" + channelId + "/messages", methods::POST, jsonObject.dump()));
 }
 
 void Channel::ModifyChannel(const std::string &name, const std::string &topic) {
@@ -86,11 +87,27 @@ void Channel::ModifyChannel(const std::string &name, const std::string &topic) {
 
 void Channel::ModifyChannel(const Snowflake &channelId, const std::string &name, const std::string &topic) {
 	nJson jsonChannel;
-	//channel.ToJson(jsonObject);
 	jsonChannel = nJson{
 		{ "name",	name	},
 		{ "topic",	topic	}
 	};
 
 	API_Call("/channels/" + channelId, methods::PATCH, jsonChannel.dump());
+}
+
+void Channel::DeleteMessageBulk(const std::vector<Message> &messages) {
+	DeleteMessageBulk(m_id, messages);
+}
+
+void Channel::DeleteMessageBulk(const Snowflake &channelId, const std::vector<Message> &messages) {
+	nJson jsonMessages;
+
+	for(auto iter = messages.begin(); iter != messages.end(); ++iter) {
+		jsonMessages["messages"].push_back(iter->m_id);
+	}
+
+	// TODO BUG
+	Log::Info("[BUG] Fake error.");
+
+	API_Call("/channels/" + channelId + "/messages/bulk-delete", methods::POST, jsonMessages.dump());
 }

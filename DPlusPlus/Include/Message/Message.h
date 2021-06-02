@@ -41,6 +41,35 @@ public:
 public:
 	void ToJson(nJson &json);
 
+	/**
+	 * Update message in channel. [MANAGE_MESSAGES]
+	 *
+	 * @message				New message object.
+	 */
+	void ModifyMessage(Message &message);
+
+	/**
+	 * Update message in channel. [MANAGE_MESSAGES]
+	 *
+	 * @channelId			The id of the channel.
+	 * @messageId			The if of the message.
+	 * @message				New message object.
+	 */
+	static void ModifyMessage(const Snowflake &channelId, const Snowflake &messageId, Message &message);
+
+	/**
+	 * Delete message in channel. [MANAGE_MESSAGES]
+	 */
+	void DeleteMessage();
+
+	/**
+	 * Delete message in channel. [MANAGE_MESSAGES]
+	 *
+	 * @channelId			The id of the channel.
+	 * @messageId			The if of the message.
+	 */
+	static void DeleteMessage(const Snowflake &channelId, const Snowflake &messageId);
+
 public:
 	Snowflake m_id;
 	Snowflake m_channelId;

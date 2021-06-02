@@ -22,7 +22,6 @@ enum class ChannelType {
 
 class Message;
 class Embed;
-class Channel;
 
 class Channel {
 
@@ -70,7 +69,7 @@ public:
 	 * @content				Message text content.
 	 * @embed				Optionally embed object.
 	 */
-	void SendMessage(const std::string &content, Embed *embed = nullptr);
+	Message SendMessage(const std::string &content, Embed *embed = nullptr);
 
 	/**
 	 * Send message in channel. [SEND_MESSAGES]
@@ -79,7 +78,7 @@ public:
 	 * @content				Message text content.
 	 * @embed				Optionally embed object.
 	 */
-	static void SendMessage(const Snowflake &channelId, const std::string &content, Embed *embed = nullptr);
+	static Message SendMessage(const Snowflake &channelId, const std::string &content, Embed *embed = nullptr);
 
 	/**
 	 * Update a channel's settings. [MANAGE_CHANNELS]
@@ -97,6 +96,20 @@ public:
 	 * @topic				New channel topic.
 	 */
 	void ModifyChannel(const Snowflake &channelId, const std::string &name, const std::string &topic);
+
+	/**
+	 * Delete multiple messages in a single request. [MANAGE_MESSAGES]
+	 *
+	 * @messages			List of messages to delete.
+	 */
+	void DeleteMessageBulk(const std::vector<Message> &messages);
+
+	/**
+	 * Delete multiple messages in a single request. [MANAGE_MESSAGES]
+	 *
+	 * @messages			List of messages to delete.
+	 */
+	static void DeleteMessageBulk(const Snowflake &channelId, const std::vector<Message> &messages);
 
 public:
 	Snowflake m_id;

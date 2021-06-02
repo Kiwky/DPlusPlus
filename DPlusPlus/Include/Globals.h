@@ -4,6 +4,7 @@
 #include <cpprest/ws_client.h>
 #include <cpprest/http_client.h>
 
+#include "Log.h"
 #include "nlohmann/json.hpp"
 
 using namespace web;

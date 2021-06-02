@@ -33,3 +33,25 @@ void Message::ToJson(nJson &j) {
 		{"embed",	jsonEmbed	},
 	};
 }
+
+#include <iostream>
+
+void Message::ModifyMessage(Message &message) {
+	return ModifyMessage(m_channelId, m_id, message);
+}
+
+void Message::ModifyMessage(const Snowflake &channelId, const Snowflake &messageId, Message &message) {
+	nJson jsonMessage;
+	message.ToJson(jsonMessage);
+
+	API_Call("/channels/" + channelId + "/messages/" + messageId, methods::PATCH, jsonMessage.dump());
+}
+
+void Message::DeleteMessage() {
+	DeleteMessage(m_channelId, m_id);
+}
+
+void Message::DeleteMessage(const Snowflake &channelId, const Snowflake &messageId) {
+	API_Call("/channels/" + channelId + "/permissions/" + messageId, methods::DEL);
+}
+
