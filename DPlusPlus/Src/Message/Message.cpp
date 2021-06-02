@@ -21,7 +21,15 @@ Message::Message(const nJson &json) {
 	GetJson(json, "pinned",				/**/ m_pinned);
 }
 
+#include <iostream>
+
 void Message::ToJson(nJson &j) {
 	nJson jsonEmbed;
-	//if(m_embeds->)
+	if(m_embeds != nullptr && (m_embeds->m_description.length() > 0 || m_embeds->m_fields.size()) > 0)
+		m_embeds->ToJson(jsonEmbed);
+
+	j = nJson{
+		{"content",	m_content	},
+		{"embed",	jsonEmbed	},
+	};
 }

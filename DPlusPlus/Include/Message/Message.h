@@ -39,7 +39,7 @@ public:
 	Message(const nJson &json);
 
 public:
-	void ToJson(nJson &j);
+	void ToJson(nJson &json);
 
 public:
 	Snowflake m_id;
