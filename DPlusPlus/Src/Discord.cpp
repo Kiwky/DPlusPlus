@@ -98,6 +98,14 @@ void Discord::ProcessBotResponse(websocket_incoming_message &message) {
 					OnMessageCreated(message);
 					break;
 				}
+				case DPlusPlus::hash_string("MESSAGE_DELETE"):
+				{
+					MessageDeleteEventArgs message(data);
+
+					//Call virtual function.
+					OnMessageDeleted(message);
+					break;
+				}
 			}
 			break;
 		}

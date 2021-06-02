@@ -35,7 +35,7 @@ class Embed;
 class Message {
 
 public:
-	Message();
+	Message() {}
 	Message(const nJson &json);
 
 public:

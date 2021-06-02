@@ -1,5 +1,7 @@
 #include "Channel/Channel.h"
 
+#include "Message/Message.h"
+
 Channel::Channel(const Snowflake &id) {
 	*this = Channel(API_Call("/channels/" + id, methods::GET));
 }
@@ -16,4 +18,12 @@ Channel::Channel(const nJson &data) {
 	GetJson(data, "topic",				/**/ m_topic);
 	GetJson(data, "icon",				/**/ m_icon);
 	GetJson(data, "nsfw",				/**/ m_nsfw);
+}
+
+Message Channel::GetMessage(const Snowflake &messageId) {
+	return Message(API_Call("/channels/" + m_id + "/messages/" + messageId, methods::GET));
+}
+
+Message Channel::GetMessage(const Snowflake &channelId, const Snowflake &messageId) {
+	return Message(API_Call("/channels/" + channelId + "/messages/" + messageId, methods::GET));
 }

@@ -19,12 +19,32 @@ enum class ChannelType {
 	kGuildStore
 };
 
+class Message;
+
 class Channel {
 
 public:
 	Channel();
 	Channel(const Snowflake &id);
 	Channel(const nJson &json);
+
+public:
+	/**
+	 * Get message by id from channel object.
+	 * 
+	 * @messageId			The id of message.
+	 */
+	Message GetMessage(const Snowflake &messageId);
+	
+	/**
+	 * Get message id without existing channel object.
+	 * 
+	 * @channelId			The id of the channel.
+	 * @messageId			The id of the message.
+	 */
+	static Message GetMessage(const Snowflake &channelId, const Snowflake &messageId);
+
+
 
 public:
 	Snowflake m_id;

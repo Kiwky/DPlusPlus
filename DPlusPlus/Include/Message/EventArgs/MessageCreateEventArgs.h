@@ -8,6 +8,7 @@ using nJson = nlohmann::json;
 
 class Message;
 class Channel;
+class Guild;
 
 class MessageCreateEventArgs {
 
@@ -18,5 +19,6 @@ public:
 public:
 	Message *m_message;
 	Channel *m_channel;
+	Guild *m_guild;
 
 };
