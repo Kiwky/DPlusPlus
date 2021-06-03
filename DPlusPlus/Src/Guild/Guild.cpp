@@ -46,17 +46,12 @@ Guild::Guild(const nJson &json) {
 	GetJson(json, "description",					/**/ m_description);
 	GetJson(json, "banner",							/**/ m_banner);
 	GetJson(json, "preferred_locale",				/**/ m_preferredLocale);
-	
+
 	//GetJsonVector(data, "channels",					/**/ channels);
 	//GetJsonVector(data, "members",					/**/ members);
 	//GetJsonVector(data, "emojis",						/**/ emojis);
 }
 
 Member Guild::GetMember(const Snowflake &id) {
-	return GetMember(m_id, id);
-}
-
-Member Guild::GetMember(const Snowflake &guildId, const Snowflake &id) {
-	Member member(API_Call("/guilds/" + guildId + "/members/" + id, methods::GET));
-	return member;
+	return Member(API_Call("/guilds/" + m_id + "/members/" + id, methods::GET));
 }

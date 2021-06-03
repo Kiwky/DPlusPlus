@@ -43,3 +43,5 @@
 #include "User/User.h"
 
 #include "Member/Member.h"
+
+#include "Intents.h"

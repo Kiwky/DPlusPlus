@@ -1,4 +1,5 @@
 #include "Discord.h"
+#include "Intents.h"
 
 std::string Discord::m_token;
 
@@ -40,11 +41,12 @@ void Discord::ProcessBotIdentity() {
 
 	websocket_outgoing_message msg;
 	nJson identity;
+	Intents intents;
 
 	identity["op"] = OP_Type::kIdentify;
 	identity["d"] = {
 		{"token", GetToken()},
-		{"intents", 513},
+		{"intents", intents.GetIntents()},
 		{"properties", {
 			{"$os", GetOS()},
 			{"$browser", "DPlusPlus"},
@@ -112,6 +114,22 @@ void Discord::ProcessBotResponse(websocket_incoming_message &message) {
 
 					// Call virtual function.
 					OnMessageUpdate(message);
+					break;
+				}
+				case hash_string("MESSAGE_DELETE_BULK"):
+				{
+					MessageBulkDeleteEventArgs message(data);
+
+					// Call virtual function.
+					OnMessageDeletedBulk(message);
+					break;
+				}
+				case hash_string("MESSAGE_REACTION_ADD"):
+				{
+					MessageReactionAddEventArgs message(data);
+
+					// Call virtual function.
+					OnMessageReactionAdd(data);
 					break;
 				}
 			}

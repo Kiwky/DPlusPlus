@@ -184,6 +184,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Src\Intents.cpp" />
     <ClCompile Include="Src\Member\Member.cpp" />
     <ClCompile Include="Src\Embed\EmbedAuthor.cpp" />
     <ClCompile Include="Src\Embed\EmbedFooter.cpp" />
@@ -274,6 +275,7 @@
     <ClInclude Include="Include\Message\EventArgs\MessageUpdateEventArgs.h" />
     <ClInclude Include="Include\User\User.h" />
     <ClInclude Include="Include\Member\Member.h" />
+    <ClInclude Include="Include\Intents.h" />
     <ClInclude Include="vendor\nlohmann\json.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

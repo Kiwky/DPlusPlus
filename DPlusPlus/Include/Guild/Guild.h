@@ -20,7 +20,6 @@ public:
 
 public:
 	Member GetMember(const Snowflake &id);
-	static Member GetMember(const Snowflake &guildId, const Snowflake &id);
 
 public:
 	Snowflake m_id;

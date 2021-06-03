@@ -11,3 +11,11 @@ void Discord::OnMessageDeleted(const MessageDeleteEventArgs &message) {
 void Discord::OnMessageUpdate(const MessageUpdateEventArgs &message) {
 	Log::Info("[OnMessageUpdate] Was called!");
 }
+
+void Discord::OnMessageDeletedBulk(const MessageBulkDeleteEventArgs &message) {
+	Log::Info("[OnMessageDeletedBulk] Was called!");
+}
+
+void Discord::OnMessageReactionAdd(const MessageReactionAddEventArgs &message) {
+	Log::Info("[OnMessageReactionAdd] Was called!");
+}

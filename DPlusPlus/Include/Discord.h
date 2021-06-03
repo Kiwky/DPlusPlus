@@ -51,6 +51,12 @@ public:
 	// Sent when a message is updated. 
 	virtual void OnMessageUpdate(const MessageUpdateEventArgs &message);
 
+	// Sent when multiple messages are deleted at once. 
+	virtual void OnMessageDeletedBulk(const MessageBulkDeleteEventArgs &message);
+
+	// Sent when a user adds a reaction to a message. 
+	virtual void OnMessageReactionAdd(const MessageReactionAddEventArgs &message);
+
 private:
 	void ProcessBotIdentity();
 	void ProcessBotHeartbeat();
