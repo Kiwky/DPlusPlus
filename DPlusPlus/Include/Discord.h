@@ -57,18 +57,24 @@ public:
 	// Sent when a user adds a reaction to a message. 
 	virtual void OnMessageReactionAdd(const MessageReactionAddEventArgs &message);
 
+	// Sent when a user remove a reaction to a message. 
+	virtual void OnMessageReactionRemoved(const MessageReactionRemoveEventArgs &message);
+
+	// Sent when a user explicitly removes all reactions from a message. 
+	virtual void OnMessageReactionClear(const MessageReactionsClearEventArgs &message);
+
 private:
 	void ProcessBotIdentity();
 	void ProcessBotHeartbeat();
 	void ProcessBotResponse(websocket_incoming_message &message);
 
 private:
-	static std::string m_token;
-	websocket_callback_client m_client;
-	int m_lastSignal;
+	static std::string m_Token;
+	websocket_callback_client m_Client;
+	int m_LastSignal;
 	int m_heartbeatInterval;
-	bool m_isReady;
-	std::string m_sessionId;
+	bool m_IsReady;
+	std::string m_SessionId;
 	std::thread *m_heartbeatThread;
 
 };

@@ -19,9 +19,9 @@ public:
 	~MessageBulkDeleteEventArgs();
 
 public:
-	std::vector<Snowflake> m_ids;
-	Channel *m_channel;
-	Guild *m_guild;
+	std::vector<Snowflake> m_Ids;
+	Guild *m_Guild;
+	Channel *m_Channel;
 
 };
 

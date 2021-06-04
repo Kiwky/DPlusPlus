@@ -17,8 +17,8 @@ public:
 	~MessageCreateEventArgs();
 
 public:
-	Message *m_message;
-	Channel *m_channel;
-	Guild *m_guild;
+	Message *m_Message;
+	Channel *m_Channel;
+	Guild *m_Guild;
 
 };

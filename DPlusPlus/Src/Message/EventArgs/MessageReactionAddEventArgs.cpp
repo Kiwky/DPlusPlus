@@ -7,22 +7,22 @@
 #include "Emoji/Emoji.h"
 
 MessageReactionAddEventArgs::MessageReactionAddEventArgs(const nJson &json) {
-	m_channel = new Channel(json["channel_id"].get<Snowflake>());
-	m_guild = new Guild(json["guild_id"].get<Snowflake>());
+	m_Channel = new Channel(json["channel_id"].get<Snowflake>());
+	m_Guild = new Guild(json["guild_id"].get<Snowflake>());
 	
-	m_message = new Message();
-	*m_message = m_channel->GetMessage(json["message_id"].get<Snowflake>());
+	m_Message = new Message();
+	*m_Message = m_Channel->GetMessage(json["message_id"].get<Snowflake>());
 	
-	m_member = new Member();
-	*m_member = m_guild->GetMember(json["user_id"].get<Snowflake>());
+	m_Member = new Member();
+	*m_Member = m_Guild->GetMember(json["user_id"].get<Snowflake>());
 
 	// TODO EMOJI
 }
 
 MessageReactionAddEventArgs::~MessageReactionAddEventArgs() {
-	delete m_message;
-	delete m_channel;
-	delete m_member;
-	delete m_guild;
-	//delete m_emoji;
+	delete m_Message;
+	delete m_Channel;
+	delete m_Member;
+	delete m_Guild;
+	//delete m_Emoji;
 }

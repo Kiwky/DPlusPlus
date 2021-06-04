@@ -13,10 +13,10 @@ public:
 	void ToJson(nJson &j);
 
 public:
-	std::string m_url;
-	std::string m_proxyUrl;
+	std::string m_Url;
+	std::string m_ProxyUrl;
 	int m_height;
-	int m_width;
+	int m_Width;
 
 };
 

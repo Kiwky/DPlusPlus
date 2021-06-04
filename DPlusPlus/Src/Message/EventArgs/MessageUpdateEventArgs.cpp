@@ -7,17 +7,17 @@
 #include "Message/Message.h"
 
 MessageUpdateEventArgs::MessageUpdateEventArgs(const nJson &json) {
-	m_message = new Message(json);
-	m_channel = new Channel(m_message->m_channelId);
-	m_guild = new Guild(m_message->m_guildId);
+	m_Message = new Message(json);
+	m_Channel = new Channel(m_Message->m_ChannelId);
+	m_Guild = new Guild(m_Message->m_GuildId);
 
-	m_member = new Member();
-	*m_member = m_guild->GetMember(m_message->m_user->m_id);
+	m_Member = new Member();
+	*m_Member = m_Guild->GetMember(m_Message->m_User->m_Id);
 }
 
 MessageUpdateEventArgs::~MessageUpdateEventArgs() {
-	delete m_guild;
-	delete m_member;
-	delete m_channel;
-	delete m_message;
+	delete m_Guild;
+	delete m_Member;
+	delete m_Channel;
+	delete m_Message;
 }

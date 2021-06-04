@@ -2,7 +2,7 @@
 
 void EmbedProvider::ToJson(nJson &j) {
 	j = nJson{
-		{"name",	m_name	},
-		{"url",		m_url	}
+		{"name",	m_Name	},
+		{"url",		m_Url	}
 	};
 }

@@ -54,21 +54,21 @@ public:
 	void DeleteMessage();
 
 public:
-	Snowflake m_id;
-	Snowflake m_channelId;
-	Snowflake m_guildId;
-	Snowflake m_webhookId;
-	int m_flags;
-	MessageType m_type;
-	User *m_user;
-	std::string m_content;
-	std::string m_timestamp;
-	std::string m_editedTimestamp;
-	bool m_tts;
-	bool m_mentionEveryone;
-	bool m_pinned;
-	Embed *m_embeds;
-	//std::vector<User *> m_mentions;
+	Snowflake m_Id;
+	Snowflake m_ChannelId;
+	Snowflake m_GuildId;
+	Snowflake m_WebhookId;
+	int m_Flags;
+	MessageType m_Type;
+	User *m_User;
+	std::string m_Content;
+	std::string m_Timestamp;
+	std::string m_EditedTimestamp;
+	bool m_Tts;
+	bool m_MentionEveryone;
+	bool m_Pinned;
+	Embed *m_Embeds;
+	//std::vector<User *> m_Mentions;
 	//std::vector<Role> mention_roles;		
 	//std::vector<Attachments> attachments;
 	//std::vector<Reaction> reactions;	

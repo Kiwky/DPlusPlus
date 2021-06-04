@@ -33,18 +33,18 @@ public:
 
 public:
 	//Colors color;
-	std::string m_title;
-	std::string m_type;
-	std::string m_description;
-	std::string m_url;
-	std::string m_timestamp;
-	EmbedFooter m_footer;
-	EmbedImage m_image;
-	EmbedThumbnail m_thumbnail;
-	EmbedVideo m_video;
-	EmbedProvider m_provider;
-	EmbedAuthor m_author;
-	std::vector<nJson> m_fields;
+	std::string m_Title;
+	std::string m_Type;
+	std::string m_Description;
+	std::string m_Url;
+	std::string m_Timestamp;
+	EmbedFooter m_Footer;
+	EmbedImage m_Image;
+	EmbedThumbnail m_Thumbnail;
+	EmbedVideo m_Video;
+	EmbedProvider m_Provider;
+	EmbedAuthor m_Author;
+	std::vector<nJson> m_Fields;
 
 };
 

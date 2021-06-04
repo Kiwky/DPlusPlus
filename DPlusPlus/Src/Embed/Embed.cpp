@@ -3,20 +3,20 @@
 void Embed::ToJson(nJson &j) {
 	nJson jsonFooter, jsonImage, jsonThumbnail, jsonVideo, jsonProvider, jsonAuthor;
 
-	m_footer.ToJson(jsonFooter);
-	m_image.ToJson(jsonImage);
-	m_thumbnail.ToJson(jsonThumbnail);
-	m_video.ToJson(jsonVideo);
-	m_provider.ToJson(jsonProvider);
-	m_author.ToJson(jsonAuthor);
+	m_Footer.ToJson(jsonFooter);
+	m_Image.ToJson(jsonImage);
+	m_Thumbnail.ToJson(jsonThumbnail);
+	m_Video.ToJson(jsonVideo);
+	m_Provider.ToJson(jsonProvider);
+	m_Author.ToJson(jsonAuthor);
 
 	j = nJson{
-		{"title",		m_title			},
-		{"type",		m_type			},
-		{"description",	m_description	},
-		{"url",			m_url			},
-		{"timestamp",	m_timestamp		},
-		//{"color",		m_color			},
+		{"title",		m_Title			},
+		{"type",		m_Type			},
+		{"description",	m_Description	},
+		{"url",			m_Url			},
+		{"timestamp",	m_Timestamp		},
+		//{"color",		m_Color			},
 		{"footer",		jsonFooter		},
 		{"image",		jsonImage		},
 		{"thumbnail",	jsonThumbnail	},
@@ -25,7 +25,7 @@ void Embed::ToJson(nJson &j) {
 		{"author",		jsonAuthor		}
 	};
 
-	for(auto iter = m_fields.begin(); iter != m_fields.end(); ++iter) {
+	for(auto iter = m_Fields.begin(); iter != m_Fields.end(); ++iter) {
 		j["fields"].push_back(*iter);
 	}
 }
@@ -37,5 +37,5 @@ void Embed::AddField(const std::string &name, const std::string &value, bool inl
 	jsonField["value"] = value;
 	jsonField["inline"] = inlineField;
 
-	m_fields.push_back(jsonField);
+	m_Fields.push_back(jsonField);
 }

@@ -71,17 +71,17 @@ public:
 	void DeleteMessageBulk(const std::vector<Message> &messages);
 	
 public:
-	Snowflake m_id;
-	Snowflake m_guildId;
-	Snowflake m_lastMessageId;
-	int m_position;
-	int m_bitrate;
-	int m_userLimit;
-	bool m_nsfw;
-	ChannelType m_type;
-	std::string m_name;
-	std::string m_topic;
-	std::string m_icon;
+	Snowflake m_Id;
+	Snowflake m_GuildId;
+	Snowflake m_LastMessageId;
+	int m_Position;
+	int m_Bitrate;
+	int m_UserLimit;
+	bool m_Nsfw;
+	ChannelType m_Type;
+	std::string m_Name;
+	std::string m_Topic;
+	std::string m_Icon;
 	// vector<overwrite> permission_overwrites;
 
 };

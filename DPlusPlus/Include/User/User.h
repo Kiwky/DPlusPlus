@@ -33,19 +33,19 @@ public:
 	User(const nJson &json);
 
 public:
-	Snowflake m_id;
-	int m_premiumType;
-	int m_publicFlags;
-	bool m_bot;
-	bool m_system;
-	bool m_mfaEnabled;
-	bool m_verified;
-	UserFlags m_flags;
-	std::string m_username;
-	std::string m_discriminator;
-	std::string m_avatar;
-	std::string m_locale;
-	std::string m_email;
+	Snowflake m_Id;
+	int m_PremiumType;
+	int m_PublicFlags;
+	bool m_Bot;
+	bool m_System;
+	bool m_MfaEnabled;
+	bool m_Verified;
+	UserFlags m_Flags;
+	std::string m_Username;
+	std::string m_Discriminator;
+	std::string m_Avatar;
+	std::string m_Locale;
+	std::string m_Email;
 
 };
 

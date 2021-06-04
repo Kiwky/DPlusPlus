@@ -19,3 +19,11 @@ void Discord::OnMessageDeletedBulk(const MessageBulkDeleteEventArgs &message) {
 void Discord::OnMessageReactionAdd(const MessageReactionAddEventArgs &message) {
 	Log::Info("[OnMessageReactionAdd] Was called!");
 }
+
+void Discord::OnMessageReactionRemoved(const MessageReactionRemoveEventArgs &message) {
+	Log::Info("[OnMessageReactionRemoved] Was called!");
+}
+
+void Discord::OnMessageReactionClear(const MessageReactionsClearEventArgs &message) {
+	Log::Info("[OnMessageReactionClear] Was called!");
+}

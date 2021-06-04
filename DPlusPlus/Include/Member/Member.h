@@ -19,14 +19,14 @@ public:
 	Member(const nJson &json);
 
 public:
-	User *m_user;
-	bool m_deaf;
-	bool m_mute;
-	bool m_pending;
-	std::string m_nick;
-	std::string m_joinedAt;
-	std::string m_premiumSince;
-	std::string m_permissions;
+	User *m_User;
+	bool m_Deaf;
+	bool m_Mute;
+	bool m_Pending;
+	std::string m_Nick;
+	std::string m_JoinedAt;
+	std::string m_PremiumSince;
+	std::string m_Permissions;
 
 };
 

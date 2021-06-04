@@ -19,10 +19,10 @@ public:
 	~MessageUpdateEventArgs();
 
 public:
-	Message *m_message;
-	Channel *m_channel;
-	Guild *m_guild;
-	Member *m_member;
+	Message *m_Message;
+	Channel *m_Channel;
+	Guild *m_Guild;
+	Member *m_Member;
 
 };
 

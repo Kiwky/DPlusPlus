@@ -2,9 +2,9 @@
 
 void EmbedAuthor::ToJson(nJson &j) {
 	j = nJson{
-		{"name",			m_name			},
-		{"url",				m_url			},
-		{"icon_url",		m_iconUrl		},
-		{"proxy_icon_url",	m_proxyIconUrl	}
+		{"name",			m_Name			},
+		{"url",				m_Url			},
+		{"icon_url",		m_IconUrl		},
+		{"proxy_icon_url",	m_ProxyIconUrl	}
 	};
 }

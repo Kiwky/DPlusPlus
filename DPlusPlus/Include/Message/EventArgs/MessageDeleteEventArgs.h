@@ -17,9 +17,9 @@ public:
 	~MessageDeleteEventArgs();
 
 public:
-	Snowflake m_id;
-	Channel *m_channel;
-	Guild *m_guild;
+	Snowflake m_Id;
+	Guild *m_Guild;
+	Channel *m_Channel;
 
 };
 

@@ -13,9 +13,9 @@ public:
 	void ToJson(nJson &j);
 
 public:
-	std::string m_text;
-	std::string m_iconUrl;
-	std::string m_proxyIconUrl;
+	std::string m_Text;
+	std::string m_IconUrl;
+	std::string m_ProxyIconUrl;
 
 };
 

@@ -5,17 +5,17 @@ User::User(const Snowflake &id) {
 }
 
 User::User(const nJson &json) {
-	GetJson(json, "id",				/**/ m_id);
-	GetJson(json, "flags",			/**/ m_flags);
-	GetJson(json, "premium_type",	/**/ m_premiumType);
-	GetJson(json, "bot",			/**/ m_bot);
-	GetJson(json, "system",			/**/ m_system);
-	GetJson(json, "mfa_enabled",	/**/ m_mfaEnabled);
-	GetJson(json, "verified",		/**/ m_verified);
-	GetJson(json, "flags",			/**/ m_flags);
-	GetJson(json, "email",			/**/ m_email);
-	GetJson(json, "locale",			/**/ m_locale);
-	GetJson(json, "username",		/**/ m_username);
-	GetJson(json, "discriminator",	/**/ m_discriminator);
-	GetJson(json, "avatar",			/**/ m_avatar);
+	GetJson(json, "id",				/**/ m_Id);
+	GetJson(json, "flags",			/**/ m_Flags);
+	GetJson(json, "premium_Type",	/**/ m_PremiumType);
+	GetJson(json, "bot",			/**/ m_Bot);
+	GetJson(json, "system",			/**/ m_System);
+	GetJson(json, "mfa_enabled",	/**/ m_MfaEnabled);
+	GetJson(json, "verified",		/**/ m_Verified);
+	GetJson(json, "flags",			/**/ m_Flags);
+	GetJson(json, "email",			/**/ m_Email);
+	GetJson(json, "locale",			/**/ m_Locale);
+	GetJson(json, "username",		/**/ m_Username);
+	GetJson(json, "discriminator",	/**/ m_Discriminator);
+	GetJson(json, "avatar",			/**/ m_Avatar);
 }

@@ -5,29 +5,29 @@
 
 Message::Message(const nJson &json) {
 	if(json.contains("author"))
-		m_user = new User(json["author"]);
+		m_User = new User(json["author"]);
 
-	GetJson(json, "id",					/**/ m_id);
-	GetJson(json, "channel_id",			/**/ m_channelId);
-	GetJson(json, "guild_id",			/**/ m_guildId);
-	GetJson(json, "webhook_id",			/**/ m_webhookId);
-	GetJson(json, "flags",				/**/ m_flags);
-	GetJson(json, "type",				/**/ m_type);
-	GetJson(json, "content",			/**/ m_content);
-	GetJson(json, "timestamp",			/**/ m_timestamp);
-	GetJson(json, "edited_timestamp",	/**/ m_editedTimestamp);
-	GetJson(json, "tts",				/**/ m_tts);
-	GetJson(json, "mention_everyone",	/**/ m_mentionEveryone);
-	GetJson(json, "pinned",				/**/ m_pinned);
+	GetJson(json, "id",					/**/ m_Id);
+	GetJson(json, "channel_id",			/**/ m_ChannelId);
+	GetJson(json, "guild_id",			/**/ m_GuildId);
+	GetJson(json, "webhook_id",			/**/ m_WebhookId);
+	GetJson(json, "flags",				/**/ m_Flags);
+	GetJson(json, "type",				/**/ m_Type);
+	GetJson(json, "content",			/**/ m_Content);
+	GetJson(json, "timestamp",			/**/ m_Timestamp);
+	GetJson(json, "edited_timestamp",	/**/ m_EditedTimestamp);
+	GetJson(json, "tts",				/**/ m_Tts);
+	GetJson(json, "mention_everyone",	/**/ m_MentionEveryone);
+	GetJson(json, "pinned",				/**/ m_Pinned);
 }
 
 void Message::ToJson(nJson &j) {
 	nJson jsonEmbed;
-	if(m_embeds != nullptr && (m_embeds->m_description.length() > 0 || m_embeds->m_fields.size()) > 0)
-		m_embeds->ToJson(jsonEmbed);
+	if(m_Embeds != nullptr && (m_Embeds->m_Description.length() > 0 || m_Embeds->m_Fields.size()) > 0)
+		m_Embeds->ToJson(jsonEmbed);
 
 	j = nJson{
-		{"content",	m_content	},
+		{"content",	m_Content	},
 		{"embed",	jsonEmbed	},
 	};
 }
@@ -36,9 +36,9 @@ void Message::ModifyMessage(Message &message) {
 	nJson jsonMessage;
 	message.ToJson(jsonMessage);
 
-	API_Call("/channels/" + m_channelId + "/messages/" + m_id, methods::PATCH, jsonMessage.dump());
+	API_Call("/channels/" + m_ChannelId + "/messages/" + m_Id, methods::PATCH, jsonMessage.dump());
 }
 
 void Message::DeleteMessage() {
-	API_Call("/channels/" + m_channelId + "/permissions/" + m_id, methods::DEL);
+	API_Call("/channels/" + m_ChannelId + "/permissions/" + m_Id, methods::DEL);
 }

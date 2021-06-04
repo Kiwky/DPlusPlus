@@ -35,6 +35,9 @@ nJson API_Call(const std::string &url, method apiMethod, const std::string &json
 			responseString = requestTask.get().extract_string().get();
 
 			code = requestTask.get().status_code();
+			if(code == 429) {
+				Log::Warning("Spam detected!");
+			}
 		} while(code == 429);
 
 		nJson s = nJson::parse(responseString.begin(), responseString.end());

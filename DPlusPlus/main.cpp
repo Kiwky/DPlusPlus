@@ -10,41 +10,47 @@ class Bot: public Discord {
 
 public:
 	virtual void OnMessageCreated(const MessageCreateEventArgs &message) override {
-		std::cout << message.m_message->m_content << "\n";
-		std::cout << message.m_channel->m_name << "\n";
+		std::cout << message.m_Message->m_Content << "\n";
+		std::cout << message.m_Channel->m_Name << "\n";
 	}
 
 	virtual void OnMessageDeleted(const MessageDeleteEventArgs &message) override {
-		std::cout << message.m_id << "\n";
-		std::cout << message.m_channel->m_name << "\n";
+		std::cout << message.m_Id << "\n";
+		std::cout << message.m_Channel->m_Name << "\n";
 
-		std::vector<Message> list = message.m_channel->GetMessages(2);
-		message.m_channel->DeleteMessageBulk(list);
+		std::vector<Message> list = message.m_Channel->GetMessages(2);
+		message.m_Channel->DeleteMessageBulk(list);
 	}
 
 	virtual void OnMessageUpdate(const MessageUpdateEventArgs &message) override {
-		std::cout << message.m_message->m_content << "\n";
-		std::cout << message.m_member->m_nick << "\n";
+		std::cout << message.m_Message->m_Content << "\n";
+		std::cout << message.m_Member->m_Nick << "\n";
 	}
 
 	virtual void OnMessageDeletedBulk(const MessageBulkDeleteEventArgs &message) override {
-		for(int i = 0; i < message.m_ids.size(); i++) {
-			std::cout << message.m_ids[i] << "\n";
+		for(int i = 0; i < message.m_Ids.size(); i++) {
+			std::cout << message.m_Ids[i] << "\n";
 		}
-		std::cout << "Guild Name: " << message.m_guild->m_name << "\n";
-		std::cout << "Channel Name: " << message.m_channel->m_name << "\n";
+		std::cout << "Guild Name: " << message.m_Guild->m_Name << "\n";
+		std::cout << "Channel Name: " << message.m_Channel->m_Name << "\n";
 	}
 
 	virtual void OnMessageReactionAdd(const MessageReactionAddEventArgs &message) override {
-		std::cout << "Channel name: " << message.m_channel->m_name << "\n";
-		std::cout << "Content: " << message.m_message->m_content << "\n";
-		std::cout << "User: " << message.m_member->m_user->m_username << "\n";
+		std::cout << "Channel name: " << message.m_Channel->m_Name << "\n";
+		std::cout << "Content: " << message.m_Message->m_Content << "\n";
+		std::cout << "User: " << message.m_Member->m_User->m_Username << "\n";
+	}
+
+	virtual void OnMessageReactionRemoved(const MessageReactionRemoveEventArgs &message) override {
+		std::cout << "Channel name: " << message.m_Channel->m_Name << "\n";
+		std::cout << "Content: " << message.m_Message->m_Content << "\n";
+		std::cout << "User: " << message.m_Member->m_User->m_Username << "\n";
 	}
 };
 
 int main() {
 	Bot b;
-	b.Start("Nzk1NzU1ODUxOTgxMzg5ODY0.X_N_Yw.qhXHjL00zHHUBYlToAO366uLDXo");
+	b.Start("");
 
 	std::cin.get();
 	std::cin.get();

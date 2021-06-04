@@ -6,12 +6,12 @@
 MessageDeleteEventArgs::MessageDeleteEventArgs(const nJson &json) {
 	Snowflake channelId = json["channel_id"];
 
-	m_id = json["id"];
-	m_channel = new Channel(channelId);
-	m_guild = new Guild(m_channel->m_guildId);
+	m_Id = json["id"];
+	m_Channel = new Channel(channelId);
+	m_Guild = new Guild(m_Channel->m_GuildId);
 }
 
 MessageDeleteEventArgs::~MessageDeleteEventArgs() {
-	delete m_channel;
-	delete m_guild;
+	delete m_Channel;
+	delete m_Guild;
 }

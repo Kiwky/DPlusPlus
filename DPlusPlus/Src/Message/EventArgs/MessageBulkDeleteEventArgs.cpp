@@ -4,13 +4,13 @@
 #include "Guild/Guild.h"
 
 MessageBulkDeleteEventArgs::MessageBulkDeleteEventArgs(const nJson &json) {
-	m_channel = new Channel(json["channel_id"].get<Snowflake>());
-	m_guild = new Guild(m_channel->m_guildId);
+	m_Channel = new Channel(json["channel_id"].get<Snowflake>());
+	m_Guild = new Guild(m_Channel->m_GuildId);
 
-	m_ids = json["ids"].get<std::vector<Snowflake>>();
+	m_Ids = json["ids"].get<std::vector<Snowflake>>();
 }
 
 MessageBulkDeleteEventArgs::~MessageBulkDeleteEventArgs() {
-	delete m_channel;
-	delete m_guild;
+	delete m_Channel;
+	delete m_Guild;
 }

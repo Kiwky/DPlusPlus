@@ -1,7 +1,7 @@
 #include "Discord.h"
 #include "Intents.h"
 
-std::string Discord::m_token;
+std::string Discord::m_Token;
 
 void Discord::Start(const std::string &token) {
 	if(token.length() == 0) {
@@ -9,12 +9,12 @@ void Discord::Start(const std::string &token) {
 		return;
 	}
 
-	m_token = token;
-	m_isReady = false;
-	m_lastSignal = 0;
+	m_Token = token;
+	m_IsReady = false;
+	m_LastSignal = 0;
 	m_heartbeatThread = nullptr;
 
-	m_client.set_message_handler([&](websocket_incoming_message msg) {
+	m_Client.set_message_handler([&](websocket_incoming_message msg) {
 		try {
 			ProcessBotResponse(msg);
 		} catch(const std::exception &e) {
@@ -24,11 +24,11 @@ void Discord::Start(const std::string &token) {
 
 	// Convert / Encode gateway string to uri.
 	web::uri gUri = web::uri(utility::conversions::to_string_t(GLOBAL_GATEWAY_URL));
-	m_client.connect(gUri).then([&]() {
+	m_Client.connect(gUri).then([&]() {
 		ProcessBotIdentity();
 	});
 
-	m_client.set_close_handler([&](websocket_close_status status,
+	m_Client.set_close_handler([&](websocket_close_status status,
 								   const utility::string_t &reason,
 								   const std::error_code &code) {
 		std::wcout << reason << "\n";
@@ -58,7 +58,7 @@ void Discord::ProcessBotIdentity() {
 
 	// Convert 'identity' object (json object) to string and send it to server.
 	msg.set_utf8_message(to_string(identity));
-	m_client.send(msg);
+	m_Client.send(msg);
 }
 
 void Discord::ProcessBotHeartbeat() {
@@ -68,10 +68,10 @@ void Discord::ProcessBotHeartbeat() {
 	nJson hearbeat;
 
 	hearbeat["op"] = OP_Type::kHeartbeat;
-	hearbeat["d"] = m_lastSignal;
+	hearbeat["d"] = m_LastSignal;
 
 	msg.set_utf8_message(to_string(hearbeat));
-	m_client.send(msg);
+	m_Client.send(msg);
 }
 
 void Discord::ProcessBotResponse(websocket_incoming_message &message) {
@@ -85,7 +85,7 @@ void Discord::ProcessBotResponse(websocket_incoming_message &message) {
 		case (int)OP_Type::kDispatch:
 		{
 			const std::string type = resultJson["t"];
-			m_lastSignal = resultJson["s"];
+			m_LastSignal = resultJson["s"];
 
 			switch(DPlusPlus::hash_string(type.c_str())) {
 				case DPlusPlus::hash_string("READY"):
@@ -132,13 +132,29 @@ void Discord::ProcessBotResponse(websocket_incoming_message &message) {
 					OnMessageReactionAdd(data);
 					break;
 				}
+				case hash_string("MESSAGE_REACTION_REMOVE"):
+				{
+					MessageReactionRemoveEventArgs message(data);
+
+					// Call virtual function.
+					OnMessageReactionRemoved(message);
+					break;
+				}
+				case hash_string("MESSAGE_REACTION_REMOVE_ALL"):
+				{
+					MessageReactionsClearEventArgs message(data);
+
+					// Call virtual function.
+					OnMessageReactionClear(message);
+					break;
+				}
 			}
 			break;
 		}
 		case (int)OP_Type::kHello:
 		{
 			m_heartbeatInterval = data["heartbeat_interval"];
-			m_isReady = true;
+			m_IsReady = true;
 
 			if(m_heartbeatThread != nullptr) {
 				delete m_heartbeatThread;
@@ -162,7 +178,7 @@ void Discord::ProcessBotResponse(websocket_incoming_message &message) {
 }
 
 std::string &Discord::GetToken() {
-	return m_token;
+	return m_Token;
 }
 
 std::string Discord::GetOS() {

@@ -20,11 +20,11 @@ public:
 	~MessageReactionAddEventArgs();
 
 public:
-	Message *m_message;
-	Channel *m_channel;
-	Member *m_member;
-	Guild *m_guild;
-	Emoji *m_emoji;
+	Message *m_Message;
+	Channel *m_Channel;
+	Member *m_Member;
+	Guild *m_Guild;
+	Emoji *m_Emoji;
 
 };
 
