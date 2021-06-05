@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <None Include="packages.config" />
     <None Include="..\.gitignore" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Src\Discord.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Log.cpp">
+    <ClCompile Include="Src\Other\Log.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Globals.cpp">
+    <ClCompile Include="Src\Other\Globals.cpp">
       <Filter>Source</Filter>
     </ClCompile>
     <ClCompile Include="Src\DiscordVirtuals.cpp" />
@@ -55,7 +55,7 @@
     <ClCompile Include="Src\Entities\Embed\EmbedProvider.cpp" />
     <ClCompile Include="Src\Entities\Embed\EmbedAuthor.cpp" />
     <ClCompile Include="Src\Entities\Member\Member.cpp" />
-    <ClCompile Include="Src\Intents.cpp" />
+    <ClCompile Include="Src\Other\Intents.cpp" />
     <ClCompile Include="Src\Entities\Ready\EventArgs\ReadyEventArgs.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -73,20 +73,16 @@
     <ClInclude Include="Include\Discord.h">
       <Filter>Include</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Log.h">
+    <ClInclude Include="Include\Other\Log.h">
       <Filter>Include</Filter>
     </ClInclude>
-    <ClInclude Include="Include\Globals.h">
+    <ClInclude Include="Include\Other\Globals.h">
       <Filter>Include</Filter>
     </ClInclude>
     <ClInclude Include="vendor\nlohmann\json.hpp" />
-    <ClInclude Include="Include\Snowflake.h" />
-    <ClInclude Include="Include\Library.h" />
+    <ClInclude Include="Include\Other\Snowflake.h" />
+    <ClInclude Include="Include\Other\Library.h" />
     <ClInclude Include="Include\Entities\Guild\Guild.h" />
-    <ClInclude Include="Include\Entities\Channel\EventArgs\ChannelCreateEventArgs.h" />
-    <ClInclude Include="Include\Entities\Channel\EventArgs\ChannelDeleteEventArgs.h" />
-    <ClInclude Include="Include\Entities\Channel\EventArgs\ChannelPinsUpdateEventArgs.h" />
-    <ClInclude Include="Include\Entities\Channel\EventArgs\ChannelUpdateEventArgs.h" />
     <ClInclude Include="Include\Entities\Channel\Channel.h" />
     <ClInclude Include="Include\Entities\Guild\EventArgs\GuildBanAddEventArgs.h" />
     <ClInclude Include="Include\Entities\Guild\EventArgs\GuildBanRemoveEventArgs.h" />
@@ -121,8 +117,12 @@
     <ClInclude Include="Include\Entities\Embed\EmbedProvider.h" />
     <ClInclude Include="Include\Entities\Embed\EmbedAuthor.h" />
     <ClInclude Include="Include\Entities\Member\Member.h" />
-    <ClInclude Include="Include\Intents.h" />
+    <ClInclude Include="Include\Other\Intents.h" />
     <ClInclude Include="Token.h" />
     <ClInclude Include="Include\Entities\Ready\EventArgs\ReadyEventArgs.h" />
+    <ClInclude Include="Include\Entities\Channel\EventArgs\ChannelCreateEventArgs.h" />
+    <ClInclude Include="Include\Entities\Channel\EventArgs\ChannelDeleteEventArgs.h" />
+    <ClInclude Include="Include\Entities\Channel\EventArgs\ChannelPinsUpdateEventArgs.h" />
+    <ClInclude Include="Include\Entities\Channel\EventArgs\ChannelUpdateEventArgs.h" />
   </ItemGroup>
 </Project>

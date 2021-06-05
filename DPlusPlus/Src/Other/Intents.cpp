@@ -1,4 +1,4 @@
-#include "Intents.h"
+#include "Other/Intents.h"
 
 Intents::Intents() {
 	AddIntents(GUILDS);

@@ -8,9 +8,9 @@
 
 #include "nlohmann/json.hpp"
 
-#include "Log.h"
-#include "Globals.h"
-#include "Library.h"
+#include "Other/Log.h"
+#include "Other/Globals.h"
+#include "Other/Library.h"
 
 using namespace web;
 using namespace web::http;
@@ -68,6 +68,12 @@ public:
 
 	// Sent when a bot removes all instances of a given emoji from the reactions of a message.
 	virtual void OnMessageReactionRemoveEmoji(const MessageReactionRemoveEmojiEventArgs &message);
+
+	// This event can be sent in three different scenarios:
+	// 1. When a user is initially connecting.
+	// 2. When a Guild becomes available again to the client.
+	// 3. When the current user joins a new Guild.
+	virtual void OnGuildCreated(const GuildCreateEventArgs &guild);
 
 private:
 	void ProcessBotIdentity();

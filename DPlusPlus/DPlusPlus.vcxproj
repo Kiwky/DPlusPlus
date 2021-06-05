@@ -186,7 +186,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Entities\Ready\EventArgs\ReadyEventArgs.cpp" />
-    <ClCompile Include="Src\Intents.cpp" />
+    <ClCompile Include="Src\Other\Intents.cpp" />
     <ClCompile Include="Src\Entities\Member\Member.cpp" />
     <ClCompile Include="Src\Entities\Embed\EmbedAuthor.cpp" />
     <ClCompile Include="Src\Entities\Embed\EmbedFooter.cpp" />
@@ -228,11 +228,15 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Src\DiscordVirtuals.cpp" />
     <ClCompile Include="Src\Discord.cpp" />
-    <ClCompile Include="Src\Globals.cpp" />
-    <ClCompile Include="Src\Log.cpp" />
+    <ClCompile Include="Src\Other\Globals.cpp" />
+    <ClCompile Include="Src\Other\Log.cpp" />
     <ClCompile Include="Src\Entities\User\User.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Include\Entities\Channel\EventArgs\ChannelCreateEventArgs.h" />
+    <ClInclude Include="Include\Entities\Channel\EventArgs\ChannelDeleteEventArgs.h" />
+    <ClInclude Include="Include\Entities\Channel\EventArgs\ChannelPinsUpdateEventArgs.h" />
+    <ClInclude Include="Include\Entities\Channel\EventArgs\ChannelUpdateEventArgs.h" />
     <ClInclude Include="Include\Entities\Embed\EmbedAuthor.h" />
     <ClInclude Include="Include\Entities\Embed\EmbedFooter.h" />
     <ClInclude Include="Include\Entities\Embed\EmbedImage.h" />
@@ -256,16 +260,12 @@
     <ClInclude Include="Include\Entities\Guild\EventArgs\GuildRoleUpdateEventArgs.h" />
     <ClInclude Include="Include\Entities\Guild\EventArgs\GuildUpdateEventArgs.h" />
     <ClInclude Include="Include\Entities\Channel\Channel.h" />
-    <ClInclude Include="Include\Entities\Channel\EventArgs\ChannelCreateEventArgs.h" />
-    <ClInclude Include="Include\Entities\Channel\EventArgs\ChannelDeleteEventArgs.h" />
-    <ClInclude Include="Include\Entities\Channel\EventArgs\ChannelPinsUpdateEventArgs.h" />
-    <ClInclude Include="Include\Entities\Channel\EventArgs\ChannelUpdateEventArgs.h" />
     <ClInclude Include="Include\Entities\Guild\Guild.h" />
     <ClInclude Include="Include\Discord.h" />
-    <ClInclude Include="Include\Globals.h" />
-    <ClInclude Include="Include\Library.h" />
-    <ClInclude Include="Include\Log.h" />
-    <ClInclude Include="Include\Snowflake.h" />
+    <ClInclude Include="Include\Other\Globals.h" />
+    <ClInclude Include="Include\Other\Library.h" />
+    <ClInclude Include="Include\Other\Log.h" />
+    <ClInclude Include="Include\Other\Snowflake.h" />
     <ClInclude Include="Include\Entities\Message\Message.h" />
     <ClInclude Include="Include\Entities\Message\EventArgs\MessageBulkDeleteEventArgs.h" />
     <ClInclude Include="Include\Entities\Message\EventArgs\MessageCreateEventArgs.h" />
@@ -277,7 +277,7 @@
     <ClInclude Include="Include\Entities\Message\EventArgs\MessageUpdateEventArgs.h" />
     <ClInclude Include="Include\Entities\User\User.h" />
     <ClInclude Include="Include\Entities\Member\Member.h" />
-    <ClInclude Include="Include\Intents.h" />
+    <ClInclude Include="Include\Other\Intents.h" />
     <ClInclude Include="Include\Entities\Ready\EventArgs\ReadyEventArgs.h" />
     <ClInclude Include="Token.h" />
     <ClInclude Include="vendor\nlohmann\json.hpp" />

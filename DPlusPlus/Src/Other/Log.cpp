@@ -1,4 +1,4 @@
-#include "Log.h"
+#include "Other/Log.h"
 
 void Log::Print(int color, const std::string &type, const std::string &message) {
 #ifdef _WIN32

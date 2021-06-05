@@ -1,5 +1,5 @@
 #include "Discord.h"
-#include "Intents.h"
+#include "Other/Intents.h"
 
 std::string Discord::m_Token;
 
@@ -31,7 +31,7 @@ void Discord::Start(const std::string &token) {
 	m_Client.set_close_handler([&](websocket_close_status status,
 								   const utility::string_t &reason,
 								   const std::error_code &code) {
-		std::wcout << reason << "\n";
+		//std::wcout << reason << "\n";
 		std::cout << "Bot closed with error code: " << code.value() << "\n";
 	});
 }
@@ -158,6 +158,14 @@ void Discord::ProcessBotResponse(websocket_incoming_message &message) {
 
 					// Call virtual function.
 					OnMessageReactionRemoveEmoji(message);
+					break;
+				}
+				case hash_string("GUILD_CREATE"):
+				{
+					GuildCreateEventArgs guild(data);
+
+					// Call virtual function.
+					OnGuildCreated(guild);
 					break;
 				}
 			}

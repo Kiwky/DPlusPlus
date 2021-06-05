@@ -35,3 +35,7 @@ void Discord::OnMessageReactionClear(const MessageReactionsClearEventArgs &messa
 void Discord::OnMessageReactionRemoveEmoji(const MessageReactionRemoveEmojiEventArgs &message) {
 	Log::Event("OnMessageReactionRemoveEmoji");
 }
+
+void Discord::OnGuildCreated(const GuildCreateEventArgs &guild) {
+	Log::Event("OnGuildCreated");
+}
