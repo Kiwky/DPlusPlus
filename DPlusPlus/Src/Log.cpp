@@ -29,3 +29,7 @@ void Log::Succes(const std::string &message) {
 	Print(COLOR_GREEN, "[SUCCES]", message);
 }
 
+void Log::Event(const std::string &eventName) {
+	Print(COLOR_GREEN, "[" + eventName + "]", "Called!");
+}
+

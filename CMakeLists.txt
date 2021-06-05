@@ -1,28 +1,18 @@
-#cmake_minimum_required(VERSION 3.9)
-#project(main)
-#
-#set(CMAKE_CXX_STANDARD 14)
-#
-#find_package(cpprestsdk REQUIRED)
-#
-#add_executable(main
-#        Discord_Virtuals.cpp
-#        Discord.cpp Discord.h
-#        Invite.cpp Invite.h
-#        Guild.cpp Guild.h
-#        Emoji.cpp Emoji.h
-#        Embed.cpp Embed.h
-#        Endpoints.cpp
-#        Intents.cpp Intents.h
-#        Member.cpp Member.h
-#        Role.cpp Role.h
-#        User.cpp User.h
-#        Channel.cpp Channel.h
-#        Message.cpp Message.h
-#        Utilities.cpp Utilities.h
-#        Ready.cpp Ready.h
-#        Log.cpp Log.h
-#        Voice.cpp Voice.h
-#        main.cpp)
-#
-#target_link_libraries(main PRIVATE cpprestsdk::cpprest)
+cmake_minimum_required(VERSION 3.9)
+project(DPlusPlus)
+
+find_package(cpprestsdk REQUIRED)
+set(CMAKE_CXX_STANDARD 14)
+
+set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/bin)
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
+set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
+
+file(GLOB SOURCE_FILES Src/*.cpp)
+
+add_library(DPlusPlus ${SOURCE_FILES})
+target_include_directories(DPlusPlus PUBLIC vendor)
+target_include_directories(DPlusPlus PUBLIC Include)
+
+target_link_libraries(DPlusPlus PRIVATE cpprestsdk::cpprest)
+

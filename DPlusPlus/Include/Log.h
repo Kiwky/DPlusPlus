@@ -37,5 +37,6 @@ public:
 	static void Error(const std::string &message);
 	static void Info(const std::string &message);
 	static void Succes(const std::string &message);
+	static void Event(const std::string &eventName);
 
 };

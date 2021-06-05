@@ -1,37 +1,37 @@
 #include "Discord.h"
 
 void Discord::OnReady(const ReadyEventArgs &ready) {
-	Log::Info("[OnReady] Was called!");
+	Log::Event("OnReady");
 }
 
 void Discord::OnMessageCreated(const MessageCreateEventArgs &message) {
-	Log::Info("[OnMessageCreated] Was called!");
+	Log::Event("OnMessageCreated");
 }
 
 void Discord::OnMessageDeleted(const MessageDeleteEventArgs &message) {
-	Log::Info("[OnMessageDeleted] Was called!");
+	Log::Event("OnMessageDeleted");
 }
 
 void Discord::OnMessageUpdate(const MessageUpdateEventArgs &message) {
-	Log::Info("[OnMessageUpdate] Was called!");
+	Log::Event("OnMessageUpdate");
 }
 
 void Discord::OnMessageDeletedBulk(const MessageBulkDeleteEventArgs &message) {
-	Log::Info("[OnMessageDeletedBulk] Was called!");
+	Log::Event("OnMessageDeletedBulk");
 }
 
 void Discord::OnMessageReactionAdd(const MessageReactionAddEventArgs &message) {
-	Log::Info("[OnMessageReactionAdd] Was called!");
+	Log::Event("OnMessageReactionAdd");
 }
 
 void Discord::OnMessageReactionRemoved(const MessageReactionRemoveEventArgs &message) {
-	Log::Info("[OnMessageReactionRemoved] Was called!");
+	Log::Event("OnMessageReactionRemoved");
 }
 
 void Discord::OnMessageReactionClear(const MessageReactionsClearEventArgs &message) {
-	Log::Info("[OnMessageReactionClear] Was called!");
+	Log::Event("OnMessageReactionClear");
 }
 
 void Discord::OnMessageReactionRemoveEmoji(const MessageReactionRemoveEmojiEventArgs &message) {
-	Log::Info("[OnMessageReactionRemoveEmoji] Was called!");
+	Log::Event("OnMessageReactionRemoveEmoji");
 }

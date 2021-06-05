@@ -4,8 +4,8 @@
 
 #include "Token.h"
 #include "Discord.h"
-#include "Channel/Channel.h"
-#include "Message/Message.h"
+#include "Entities/Channel/Channel.h"
+#include "Entities/Message/Message.h"
 
 class Bot: public Discord {
 
@@ -36,7 +36,7 @@ public:
 		for(int i = 0; i < message.m_Ids.size(); i++) {
 			std::cout << message.m_Ids[i] << "\n";
 		}
-		std::cout << "Guild Name: " << message.m_Guild->m_Name << "\n";
+		std::cout << "Entities/Guild Name: " << message.m_Guild->m_Name << "\n";
 		std::cout << "Channel Name: " << message.m_Channel->m_Name << "\n";
 	}
 
