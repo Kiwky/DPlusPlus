@@ -1,5 +1,9 @@
 #include "Discord.h"
 
+void Discord::OnReady(const ReadyEventArgs &ready) {
+	Log::Info("[OnReady] Was called!");
+}
+
 void Discord::OnMessageCreated(const MessageCreateEventArgs &message) {
 	Log::Info("[OnMessageCreated] Was called!");
 }

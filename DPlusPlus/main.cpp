@@ -10,6 +10,10 @@
 class Bot: public Discord {
 
 public:
+	virtual void OnReady(const ReadyEventArgs &ready) {
+		std::cout << ready.m_GatewayVersion << " " << ready.m_SessionId << "\n";
+	}
+
 	virtual void OnMessageCreated(const MessageCreateEventArgs &message) override {
 		std::cout << message.m_Message->m_Content << "\n";
 		std::cout << message.m_Channel->m_Name << "\n";

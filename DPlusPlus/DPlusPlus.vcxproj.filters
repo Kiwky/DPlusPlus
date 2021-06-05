@@ -56,6 +56,7 @@
     <ClCompile Include="Src\Embed\EmbedAuthor.cpp" />
     <ClCompile Include="Src\Member\Member.cpp" />
     <ClCompile Include="Src\Intents.cpp" />
+    <ClCompile Include="Src\Ready\EventArgs\ReadyEventArgs.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Include">
@@ -122,5 +123,6 @@
     <ClInclude Include="Include\Member\Member.h" />
     <ClInclude Include="Include\Intents.h" />
     <ClInclude Include="Token.h" />
+    <ClInclude Include="Include\Ready\EventArgs\ReadyEventArgs.h" />
   </ItemGroup>
 </Project>

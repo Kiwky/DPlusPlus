@@ -185,6 +185,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Src\Ready\EventArgs\ReadyEventArgs.cpp" />
     <ClCompile Include="Src\Intents.cpp" />
     <ClCompile Include="Src\Member\Member.cpp" />
     <ClCompile Include="Src\Embed\EmbedAuthor.cpp" />
@@ -277,6 +278,7 @@
     <ClInclude Include="Include\User\User.h" />
     <ClInclude Include="Include\Member\Member.h" />
     <ClInclude Include="Include\Intents.h" />
+    <ClInclude Include="Include\Ready\EventArgs\ReadyEventArgs.h" />
     <ClInclude Include="Token.h" />
     <ClInclude Include="vendor\nlohmann\json.hpp" />
   </ItemGroup>

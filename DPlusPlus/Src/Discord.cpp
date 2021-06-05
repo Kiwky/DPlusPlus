@@ -90,6 +90,10 @@ void Discord::ProcessBotResponse(websocket_incoming_message &message) {
 			switch(DPlusPlus::hash_string(type.c_str())) {
 				case DPlusPlus::hash_string("READY"):
 				{
+					ReadyEventArgs ready(data);
+
+					// Call virtual function.
+					OnReady(ready);
 					break;
 				}
 				case DPlusPlus::hash_string("MESSAGE_CREATE"):

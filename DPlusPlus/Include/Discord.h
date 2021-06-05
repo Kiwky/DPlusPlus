@@ -42,6 +42,9 @@ public:
 	static std::string GetOS();
 
 public:
+	// The ready event is dispatched when a client has completed the initial handshake with the gateway.
+	virtual void OnReady(const ReadyEventArgs &ready);
+
 	// Sent when a message is created. 
 	virtual void OnMessageCreated(const MessageCreateEventArgs &message);
 
