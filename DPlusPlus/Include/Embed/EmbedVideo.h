@@ -15,7 +15,7 @@ public:
 public:
 	std::string m_Url;
 	std::string m_ProxyUrl;
-	int m_height;
+	int m_Height;
 	int m_Width;
 
 };

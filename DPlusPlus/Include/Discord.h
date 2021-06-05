@@ -63,6 +63,9 @@ public:
 	// Sent when a user explicitly removes all reactions from a message. 
 	virtual void OnMessageReactionClear(const MessageReactionsClearEventArgs &message);
 
+	// Sent when a bot removes all instances of a given emoji from the reactions of a message.
+	virtual void OnMessageReactionRemoveEmoji(const MessageReactionRemoveEmojiEventArgs &message);
+
 private:
 	void ProcessBotIdentity();
 	void ProcessBotHeartbeat();
@@ -72,10 +75,10 @@ private:
 	static std::string m_Token;
 	websocket_callback_client m_Client;
 	int m_LastSignal;
-	int m_heartbeatInterval;
+	int m_HeartbeatInterval;
 	bool m_IsReady;
 	std::string m_SessionId;
-	std::thread *m_heartbeatThread;
+	std::thread *m_HeartbeatThread;
 
 };
 

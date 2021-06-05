@@ -12,7 +12,7 @@ void Discord::Start(const std::string &token) {
 	m_Token = token;
 	m_IsReady = false;
 	m_LastSignal = 0;
-	m_heartbeatThread = nullptr;
+	m_HeartbeatThread = nullptr;
 
 	m_Client.set_message_handler([&](websocket_incoming_message msg) {
 		try {
@@ -148,23 +148,31 @@ void Discord::ProcessBotResponse(websocket_incoming_message &message) {
 					OnMessageReactionClear(message);
 					break;
 				}
+				case hash_string("MESSAGE_REACTION_REMOVE_EMOJI"):
+				{
+					MessageReactionRemoveEmojiEventArgs message(data);
+
+					// Call virtual function.
+					OnMessageReactionRemoveEmoji(message);
+					break;
+				}
 			}
 			break;
 		}
 		case (int)OP_Type::kHello:
 		{
-			m_heartbeatInterval = data["heartbeat_interval"];
+			m_HeartbeatInterval = data["heartbeat_interval"];
 			m_IsReady = true;
 
-			if(m_heartbeatThread != nullptr) {
-				delete m_heartbeatThread;
-				m_heartbeatThread = nullptr;
+			if(m_HeartbeatThread != nullptr) {
+				delete m_HeartbeatThread;
+				m_HeartbeatThread = nullptr;
 			}
 
-			m_heartbeatThread = new std::thread([&]() {
+			m_HeartbeatThread = new std::thread([&]() {
 				while(true) {
 					try {
-						std::this_thread::sleep_for(std::chrono::milliseconds(m_heartbeatInterval));
+						std::this_thread::sleep_for(std::chrono::milliseconds(m_HeartbeatInterval));
 						ProcessBotHeartbeat();
 					} catch(const std::exception &e) {
 						Log::Error("Heartbeat thread error: " + (std::string)e.what());

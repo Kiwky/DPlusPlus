@@ -57,8 +57,8 @@ public:
 
 	/**
 	 * Update a channel's settings. [MANAGE_CHANNELS]
-	 *
-	 * @name				New channel name.
+	 * 
+	 * @name				New channel name. 
 	 * @topic				New channel topic.
 	 */
 	void ModifyChannel(const std::string &name, const std::string &topic);

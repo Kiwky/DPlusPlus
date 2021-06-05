@@ -2,6 +2,7 @@
 #include <string>
 #include <thread>
 
+#include "Token.h"
 #include "Discord.h"
 #include "Channel/Channel.h"
 #include "Message/Message.h"
@@ -46,11 +47,15 @@ public:
 		std::cout << "Content: " << message.m_Message->m_Content << "\n";
 		std::cout << "User: " << message.m_Member->m_User->m_Username << "\n";
 	}
+
+	virtual void OnMessageReactionRemoveEmoji(const MessageReactionRemoveEmojiEventArgs &message) {
+		std::cout << message.m_Guild->m_Name << "\n";
+	}
 };
 
 int main() {
 	Bot b;
-	b.Start("");
+	b.Start(BOT_TOKEN);
 
 	std::cin.get();
 	std::cin.get();

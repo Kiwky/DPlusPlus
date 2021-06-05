@@ -27,3 +27,7 @@ void Discord::OnMessageReactionRemoved(const MessageReactionRemoveEventArgs &mes
 void Discord::OnMessageReactionClear(const MessageReactionsClearEventArgs &message) {
 	Log::Info("[OnMessageReactionClear] Was called!");
 }
+
+void Discord::OnMessageReactionRemoveEmoji(const MessageReactionRemoveEmojiEventArgs &message) {
+	Log::Info("[OnMessageReactionRemoveEmoji] Was called!");
+}
