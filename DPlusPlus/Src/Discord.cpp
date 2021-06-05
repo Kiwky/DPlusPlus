@@ -191,7 +191,6 @@ void Discord::ProcessBotResponse(websocket_incoming_message &message) {
 					}
 				}
 			});
-
 			break;
 		}
 	}
